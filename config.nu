@@ -905,10 +905,5 @@ export def send-notification [msg: string, --title: string = "from nu"] {
     } 
 }
 
-const ohmyposh_init_script = ($nu.cache-dir | path join "oh-my-posh-init.nu");
-source $ohmyposh_init_script 
-
-const carapace_init_script = ($nu.cache-dir | path join "carapace-init.nu")
-source $carapace_init_script;
 # -----
 
