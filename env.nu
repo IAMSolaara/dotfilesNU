@@ -50,7 +50,8 @@ path add ~/.local/bin
 path add ~/.cargo/bin
 path add /opt/homebrew/opt/mysql-client@5.7/bin
 path add /opt/homebrew/opt/mysql-client/bin
-#path add ($env.KREW_ROOT || ($env.HOME | path join '.krew') | path join 'bin')
+path add ($env.HOME | path join '.krew' | path join 'bin')
+
 $env.JAVA_HOME = (/usr/libexec/java_home -v 21)
 
 mkdir $nu.cache-dir
