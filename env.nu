@@ -54,8 +54,6 @@ path add ($env.HOME | path join '.krew' | path join 'bin')
 
 $env.JAVA_HOME = (/usr/libexec/java_home -v 21)
 
-mkdir $nu.cache-dir
-
 let ohmyposh_init_script = ($nu.vendor-autoload-dirs | last | path join "oh-my-posh-init.nu" )
 oh-my-posh init nu --config ($env.HOME | path join dotfiles | path join "oh-my-posh" | path join "so-shell.omp.yaml") --print | save $ohmyposh_init_script --force
 
