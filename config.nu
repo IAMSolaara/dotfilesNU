@@ -160,7 +160,6 @@ $env.config = {
     }
 
     color_config: $dark_theme # if you want a more interesting theme, you can replace the empty record with `$dark_theme`, `$light_theme` or another custom record
-    use_grid_icons: true
     footer_mode: 25 # always, never, number_of_rows, auto
     float_precision: 2 # the precision for displaying floats in tables
     buffer_editor: null # command that will be used to edit the current line buffer with ctrl+o, if unset fallback to $env.EDITOR and $env.VISUAL
@@ -221,7 +220,7 @@ $env.config = {
         pre_prompt: [{ null }] # run before the prompt is shown
         pre_execution: [{ null }] # run before the repl input is run
         env_change: {
-            PWD: [{|before, after| null }] # run if the PWD environment is different since the last repl input
+            PWD: [] # run if the PWD environment is different since the last repl input
         }
         display_output: "if (term size).columns >= 100 { table -e } else { table }" # run to display the output of a pipeline
         command_not_found: { null } # return an error message when a command is not found
@@ -797,23 +796,21 @@ $env.config = {
             modifier: control_shift
             keycode: char_c
             mode: emacs
-            #event: { edit: copyselection }
-            event: { edit: copyselectionsystem }
+            event: { edit: copyselection }
         }
         {
             name: cut_selection
             modifier: control_shift
             keycode: char_x
             mode: emacs
-            # event: { edit: cutselection }
-            event: { edit: cutselectionsystem }
+             event: { edit: cutselection }
         }
         {
             name: paste_system
             modifier: control_shift
             keycode: char_v
             mode: emacs
-            event: { edit: pastesystem }
+            event: { edit: paste }
         }
         {
             name: select_all
