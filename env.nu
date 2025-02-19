@@ -51,11 +51,14 @@ path add ~/.cargo/bin
 path add /opt/homebrew/opt/mysql-client@5.7/bin
 path add /opt/homebrew/opt/mysql-client/bin
 path add ($env.HOME | path join '.krew' | path join 'bin')
+path add ($env.HOME | path join '.mix' | path join 'escripts')
+path add ($env.HOME | path join '.bun' | path join 'bin')
+path add ($env.HOME | path join 'go' | path join 'bin')
 
 $env.JAVA_HOME = (/usr/libexec/java_home -v 21)
 
 let ohmyposh_init_script = ($nu.vendor-autoload-dirs | last | path join "oh-my-posh-init.nu" )
-oh-my-posh init nu --config ($env.HOME | path join dotfiles | path join "oh-my-posh" | path join "so-shell.omp.yaml") --print | save $ohmyposh_init_script --force
+oh-my-posh init nu --config ($env.HOME | path join dotfiles | path join "oh-my-posh" | path join "so-shell-catppuccin.omp.yaml") --print | save $ohmyposh_init_script --force
 
 let carapace_init_script = ($nu.vendor-autoload-dirs | last | path join "carapace-init.nu")
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
