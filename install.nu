@@ -2,7 +2,7 @@
 
 def replace-with-link [--src: string, --dst: string] {
 	let real_src = $src | path expand  -s
-	let real_dst = $dst | path expand  -s
+	let real_dst = $dst | path expand
 
 	if ($real_src != $real_dst) {
 		if (($dst | path type) != "symlink") {
