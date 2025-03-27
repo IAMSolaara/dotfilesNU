@@ -3,7 +3,6 @@
 # version = "0.96.0"
 # vim:ts=4:sw=4:expandtab
 
-
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
 $env.PROMPT_INDICATOR = {|| "> " }
@@ -56,11 +55,4 @@ path add ($env.HOME | path join '.bun' | path join 'bin')
 path add ($env.HOME | path join 'go' | path join 'bin')
 
 $env.JAVA_HOME = (/usr/libexec/java_home -v 21)
-
-let ohmyposh_init_script = ($nu.vendor-autoload-dirs | last | path join "oh-my-posh-init.nu" )
-oh-my-posh init nu --config ($env.HOME | path join dotfiles | path join "oh-my-posh" | path join "so-shell-catppuccin.omp.yaml") --print | save $ohmyposh_init_script --force
-
-let carapace_init_script = ($nu.vendor-autoload-dirs | last | path join "carapace-init.nu")
-$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-carapace _carapace nushell | save --force $carapace_init_script
 # -----
